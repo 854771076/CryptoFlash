@@ -138,19 +138,23 @@ class CryptoFlashService:
         logger.info(f"开始推送 {len(data)} 条数据...")
         
         all_success = True
-        for notifier in self.notifiers:
-            try:
-                # 调用通知器的send_notification方法，传递预生成的markdown内容
-                success = notifier.send_notification(data, markdown_content)
-                if not success:
+        result_list=[]
+        with ThreadPoolExecutor(max_workers=int(self.config.get('pool', {}).get('max_workers', 5))) as executor:
+            for notifier in self.notifiers:
+                future = executor.submit(notifier.send_notification, data, markdown_content)
+                try:
+                    result_list.extend(future.result())
+                except Exception as e:
                     all_success = False
-                    logger.exception(f"通知器 {notifier.__class__.__name__} 发送失败")
-                else:
-                    logger.info(f"通知器 {notifier.__class__.__name__} 发送成功")
-            except Exception as e:
-                all_success = False
-                logger.exception(f"通知器 {notifier.__class__.__name__} 发送异常: {e}")
-                continue
+                    logger.exception(f"通知器 {notifier.__class__.__name__} 发送失败,{e}")
+                    continue
+                
+                for result in result_list:
+                    if result:
+                        logger.info(f"通知器 {notifier.__class__.__name__} 发送成功,{result}")
+                    else:
+                        all_success = False
+                        logger.exception(f"通知器 {notifier.__class__.__name__} 发送失败,{result}")
         
         return all_success
     
