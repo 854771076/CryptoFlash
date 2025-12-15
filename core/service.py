@@ -37,7 +37,7 @@ class CryptoFlashService:
                 self.spiders.append(spider_cls())
             logger.info(f"成功初始化 {len(self.spiders)} 个爬虫适配器")
         except Exception as e:
-            logger.error(f"初始化爬虫适配器失败: {e}")
+            logger.exception(f"初始化爬虫适配器失败: {e}")
             raise
     
     def init_notifiers(self):
@@ -51,10 +51,10 @@ class CryptoFlashService:
                 try:
                     self.notifiers.append(notifier_cls())
                 except Exception as e:
-                    logger.error(f"初始化通知适配器 {notifier_cls.__name__} 失败: {e}")
+                    logger.exception(f"初始化通知适配器 {notifier_cls.__name__} 失败: {e}")
             logger.info(f"成功初始化 {len(self.notifiers)} 个通知适配器")
         except Exception as e:
-            logger.error(f"初始化通知适配器失败: {e}")
+            logger.exception(f"初始化通知适配器失败: {e}")
             raise
     
     def fetch_data(self) -> List[Dict]:
@@ -71,7 +71,7 @@ class CryptoFlashService:
                 try:
                     self.data.extend(future.result())
                 except Exception as e:
-                    logger.error(f"爬虫 {spider.__class__.__name__} 爬取失败: {e}")
+                    logger.exception(f"爬虫 {spider.__class__.__name__} 爬取失败: {e}")
                     continue
         
         logger.info(f"数据爬取完成，共获取 {len(self.data)} 条数据")
@@ -116,7 +116,7 @@ class CryptoFlashService:
             logger.info(f"数据处理完成，处理后剩余 {len(processed_data)} 条新数据")
             return processed_data
         except Exception as e:
-            logger.error(f"数据处理失败: {e}")
+            logger.exception(f"数据处理失败: {e}")
             return []
     
     def send_notification(self, data: List[Dict] = None, markdown_content: str = None) -> bool:
@@ -143,12 +143,12 @@ class CryptoFlashService:
                 success = notifier.send_notification(data, markdown_content)
                 if not success:
                     all_success = False
-                    logger.error(f"通知器 {notifier.__class__.__name__} 发送失败")
+                    logger.exception(f"通知器 {notifier.__class__.__name__} 发送失败")
                 else:
                     logger.info(f"通知器 {notifier.__class__.__name__} 发送成功")
             except Exception as e:
                 all_success = False
-                logger.error(f"通知器 {notifier.__class__.__name__} 发送异常: {e}")
+                logger.exception(f"通知器 {notifier.__class__.__name__} 发送异常: {e}")
                 continue
         
         return all_success
@@ -226,5 +226,5 @@ class CryptoFlashService:
             logger.info("CryptoFlash服务执行完成")
             return success
         except Exception as e:
-            logger.error(f"CryptoFlash服务执行失败: {e}")
+            logger.exception(f"CryptoFlash服务执行失败: {e}")
             return False
