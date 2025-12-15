@@ -42,12 +42,7 @@ jobs:
       run: |
         python main.py
     
-    - name: Upload logs
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: cryptoflash-logs
-        path: logs/
+
     
     - name: Commit and push if changes
       env:
