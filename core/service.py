@@ -143,7 +143,7 @@ class CryptoFlashService:
             for notifier in self.notifiers:
                 future = executor.submit(notifier.send_notification, data, markdown_content)
                 try:
-                    result_list.extend(future.result())
+                    result_list.append(future.result())
                 except Exception as e:
                     all_success = False
                     logger.exception(f"通知器 {notifier.__class__.__name__} 发送失败,{e}")
