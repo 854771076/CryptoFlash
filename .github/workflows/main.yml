@@ -40,9 +40,9 @@ jobs:
         EMAIL_SMTP_PASSWORD: ${{ secrets.EMAIL_SMTP_PASSWORD }}
         EMAIL_TO_EMAILS: ${{ secrets.EMAIL_TO_EMAILS }}
         # Bark通知配置环境变量
-        BARK_API_URL: ${{ secrets.BARK_API_URL }}
+        BARK_API_URL: ${{ secrets.BARK_API_URL || 'https://api.day.app' }}
         BARK_DEVICE_KEY: ${{ secrets.BARK_DEVICE_KEY }}
-        BARK_GROUP: ${{ secrets.BARK_GROUP }}
+        BARK_GROUP: ${{ secrets.BARK_GROUP || 'crypto_flash' }}
         POOL_MAX_WORKERS: 5
       run: |
         python main.py
