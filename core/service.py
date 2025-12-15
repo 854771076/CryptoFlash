@@ -21,7 +21,8 @@ class CryptoFlashService:
         self.notifiers = []  # 通知适配器列表
         self.data = []  # 爬取到的数据
         self.config=config_loader.get_config()
-        logger.debug(f"最大线程数: {self.config}")
+        logger.debug(f"{self.config}")
+        logger.info(f"最大线程数：{self.config.get('pool', {}).get('max_workers', 5)}")
         self.init_spiders()
         self.init_notifiers()
         
@@ -65,7 +66,7 @@ class CryptoFlashService:
         """
         logger.info("开始爬取数据...")
         self.data = []
-        with ThreadPoolExecutor(max_workers=self.config.get('pool', {}).get('max_workers', 5)) as executor:
+        with ThreadPoolExecutor(max_workers=int(self.config.get('pool', {}).get('max_workers', 5))) as executor:
             for spider in self.spiders:
                 future = executor.submit(spider.fetch_data)
                 try:
