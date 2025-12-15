@@ -150,9 +150,7 @@ class CryptoFlashService:
                     continue
                 
                 for result in result_list:
-                    if result:
-                        logger.info(f"通知器 {notifier.__class__.__name__} 发送成功,{result}")
-                    else:
+                    if not result:
                         all_success = False
                         logger.exception(f"通知器 {notifier.__class__.__name__} 发送失败,{result}")
         
