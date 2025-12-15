@@ -24,7 +24,9 @@ class Logger:
         # 配置日志格式
         formatter = logging.Formatter(
             fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-            datefmt="%Y-%m-%d %H:%M:%S"
+            datefmt="%Y-%m-%d %H:%M:%S",
+            
+
         )
         
         # 控制台处理器 - 设置UTF-8编码

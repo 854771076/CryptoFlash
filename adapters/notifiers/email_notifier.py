@@ -22,10 +22,10 @@ class EmailNotifier(NotifierBase):
         self.smtp_password = email_config.get("smtp_password")
         self.to_emails = email_config.get("to_emails", [])
         assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+        assert self.smtp_port, "邮件通知器未配置SMTP端口"
         assert self.smtp_user, "邮件通知器未配置SMTP用户名"
         assert self.smtp_password, "邮件通知器未配置SMTP密码"
         assert self.to_emails, "邮件通知器未配置收件人邮箱"
-        assert self.from_email, "邮件通知器未配置发件人邮箱"
 
 
 

@@ -13,17 +13,17 @@ spiders:
 # 通知配置
 notifiers:
   dingtalk:
-    # webhook: "https://oapi.dingtalk.com/robot/send?access_token=your-dingtalk-robot-token"  # 钉钉机器人Webhook (环境变量: DINGTALK_WEBHOOK)
-    # secret: "your-dingtalk-robot-secret"  # 钉钉机器人密钥（可选）(环境变量: DINGTALK_SECRET)
+    webhook: "https://oapi.dingtalk.com/robot/send?access_token=your-dingtalk-robot-token"  # 钉钉机器人Webhook (环境变量: DINGTALK_WEBHOOK)
+    secret: ""  # 钉钉机器人密钥（可选）(环境变量: DINGTALK_SECRET)
   email:
-    # smtp_server: "smtp.163.com"  # SMTP服务器地址 (环境变量: EMAIL_SMTP_SERVER)
-    # smtp_port: 465  # SMTP服务器端口（通常为465或587）(环境变量: EMAIL_SMTP_PORT)
-    # smtp_user: "your-email@163.com"  # 发件人邮箱 (环境变量: EMAIL_SMTP_USER)
-    # smtp_password: "your-email-password"  # 发件人邮箱密码或授权码 (环境变量: EMAIL_SMTP_PASSWORD)
-    # to_emails: ["recipient1@example.com", "recipient2@example.com"]  # 收件人邮箱列表 (环境变量: EMAIL_TO_EMAILS，格式: "email1@example.com,email2@example.com")
+    smtp_server: ""  # SMTP服务器地址 (环境变量: EMAIL_SMTP_SERVER)
+    smtp_port: 465  # SMTP服务器端口（通常为465或587）(环境变量: EMAIL_SMTP_PORT)
+    smtp_user: ""  # 发件人邮箱 (环境变量: EMAIL_SMTP_USER)
+    smtp_password: ""  # 发件人邮箱密码或授权码 (环境变量: EMAIL_SMTP_PASSWORD)
+    to_emails: []  # 收件人邮箱列表 (环境变量: EMAIL_TO_EMAILS，格式: "email1@example.com,email2@example.com")
   bark:
     api_url: "https://api.day.app"  # Bark服务API地址 (环境变量: BARK_API_URL)
-    # device_key: "your-bark-device-key"  # Bark设备密钥 (环境变量: BARK_DEVICE_KEY)
+    device_key: ""  # Bark设备密钥 (环境变量: BARK_DEVICE_KEY)
     group: "crypto_flash"  # 通知分组 (环境变量: BARK_GROUP)
 
 pool:
