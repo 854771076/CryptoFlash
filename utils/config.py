@@ -29,7 +29,7 @@ class ConfigLoader:
         
         :param config_path: 配置文件路径，如果不指定则使用默认路径
         """
-        self.config_path = config_path or os.path.join(os.path.dirname(__file__), "..", "config", "custom-conf.yml")
+        self.config_path = config_path or os.path.join(os.path.dirname(__file__), "..", "config", "custom-conf-sample.yml")
         self.config = None
         self.load_config()
     
