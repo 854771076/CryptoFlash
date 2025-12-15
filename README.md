@@ -32,38 +32,21 @@ CryptoFlash是一个基于适配器模式的Web3资讯推送系统，能够自�
 
 ```mermaid
 graph TD
-    subgraph 客户端层
-        A[main.py程序入口]
-    end
-
-    subgraph 核心服务层
-        B[CryptoFlashService核心服务]
-    end
-
-    subgraph 抽象接口层
-        C1[SpiderBase爬虫基类]
-        C2[NotifierBase通知基类]
-    end
-
-    subgraph 适配器层
-        D11[BinanceSpider币安爬虫]
-        D12[ForesightNewsSpider FORESIGHTNEWS爬虫]
-        D21[DingTalkNotifier钉钉通知]
-        D22[EmailNotifier邮箱通知]
-    end
-
-    subgraph 工具类层
-        E1[ConfigUtil配置工具]
-        E2[SQLiteDB数据库工具]
-        E3[Logger日志工具]
-    end
-
-    subgraph 外部资源
-        F1[币安官网]
-        F2[FORESIGHTNEWS官网]
-        F3[钉钉机器人API]
-        F4[SMTP邮件服务器]
-    end
+    A[main.py程序入口]
+    B[CryptoFlashService核心服务]
+    C1[SpiderBase爬虫基类]
+    C2[NotifierBase通知基类]
+    D11[BinanceSpider币安爬虫]
+    D12[ForesightNewsSpider FORESIGHTNEWS爬虫]
+    D21[DingTalkNotifier钉钉通知]
+    D22[EmailNotifier邮箱通知]
+    E1[ConfigUtil配置工具]
+    E2[SQLiteDB数据库工具]
+    E3[Logger日志工具]
+    F1[币安官网]
+    F2[FORESIGHTNEWS官网]
+    F3[钉钉机器人API]
+    F4[SMTP邮件服务器]
 
     %% 连接关系
     A --> B
@@ -72,10 +55,10 @@ graph TD
     B --> E1
     B --> E2
     B --> E3
-    C1 <|-- D11
-    C1 <|-- D12
-    C2 <|-- D21
-    C2 <|-- D22
+    C1 --> D11
+    C1 --> D12
+    C2 --> D21
+    C2 --> D22
     D11 --> F1
     D12 --> F2
     D21 --> F3
