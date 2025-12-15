@@ -19,6 +19,10 @@ class ConfigLoader:
         "notifiers.email.smtp_user": "EMAIL_SMTP_USER",
         "notifiers.email.smtp_password": "EMAIL_SMTP_PASSWORD",
         "notifiers.email.to_emails": "EMAIL_TO_EMAILS",
+        # Bark通知配置
+        "notifiers.bark.api_url": "BARK_API_URL",
+        "notifiers.bark.device_key": "BARK_DEVICE_KEY",
+        "notifiers.bark.group": "BARK_GROUP",
         "pool.max_workers": "POOL_MAX_WORKERS",
         "logger.level": "LOG_LEVEL",
     }
