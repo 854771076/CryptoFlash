@@ -1,0 +1,39 @@
+# 配置说明：
+# 1. 可以通过修改此文件创建custom-conf.yml来配置应用
+# 2. 也可以通过环境变量来配置应用，环境变量优先级高于配置文件
+# 3. 环境变量与配置项的对应关系如下：
+
+# 爬虫配置
+spiders:
+  binance:
+    url: "https://www.binance.com/zh-CN/support/announcement"  # 币安公告地址 (环境变量: BINANCE_URL)
+  foresight_news:
+    url: "https://foresightnews.pro/news"  # FORESIGHTNEWS地址 (环境变量: FORESIGHT_NEWS_URL)
+
+# 通知配置
+notifiers:
+  dingtalk:
+    webhook: "https://oapi.dingtalk.com/robot/send?access_token=your-dingtalk-robot-token"  # 钉钉机器人Webhook (环境变量: DINGTALK_WEBHOOK)
+    secret: "your-dingtalk-robot-secret"  # 钉钉机器人密钥（可选）(环境变量: DINGTALK_SECRET)
+  email:
+    smtp_server: "smtp.163.com"  # SMTP服务器地址 (环境变量: EMAIL_SMTP_SERVER)
+    smtp_port: 465  # SMTP服务器端口（通常为465或587）(环境变量: EMAIL_SMTP_PORT)
+    smtp_user: "your-email@163.com"  # 发件人邮箱 (环境变量: EMAIL_SMTP_USER)
+    smtp_password: "your-email-password"  # 发件人邮箱密码或授权码 (环境变量: EMAIL_SMTP_PASSWORD)
+    to_emails: ["recipient1@example.com", "recipient2@example.com"]  # 收件人邮箱列表 (环境变量: EMAIL_TO_EMAILS，格式: "email1@example.com,email2@example.com")
+
+pool:
+  max_workers: 4  # 最大线程数 (环境变量: POOL_MAX_WORKERS)
+logger:
+  level: INFO  # 日志级别 (环境变量: LOG_LEVEL)
+# 使用环境变量的示例：
+# 当使用GitHub Actions时，可以在仓库的Settings > Secrets and variables > Actions中设置以下环境变量：
+# - DINGTALK_WEBHOOK: 钉钉机器人Webhook
+# - DINGTALK_SECRET: 钉钉机器人密钥
+# - EMAIL_SMTP_SERVER: 邮件SMTP服务器地址
+# - EMAIL_SMTP_PORT: 邮件SMTP服务器端口
+# - EMAIL_SMTP_USER: 发件人邮箱
+# - EMAIL_SMTP_PASSWORD: 发件人邮箱密码或授权码
+# - EMAIL_TO_EMAILS: 收件人邮箱列表，逗号分隔
+#
+# 应用会优先使用环境变量中的配置，如果环境变量不存在，则使用配置文件中的配置
