@@ -17,6 +17,16 @@ class BinanceSpider(SpiderBase):
         self.url = config_loader.get_config("spiders", "binance").get("url")
         self.source = "binance"
         self.user_agent = UserAgent()
+        self.default_headers={
+            'bnc-location':'CN',
+            'bnc-time-zone':'Asia/Shanghai','referer':'https://www.binance.com/zh-CN/support/announcement',
+            'User-Agent': self.user_agent.random,
+            'lang': 'zh-CN'
+        }
+        self.default_cookies={
+            'lang': 'zh-CN',
+            'BNC-Location': 'CN'
+        }
     # 交易对公告
     def token_pair_announcement_list(self) -> List[Dict]:
         """
@@ -25,7 +35,7 @@ class BinanceSpider(SpiderBase):
         :return: 交易对公告列表
         """
         url='https://www.binance.com/bapi/apex/v1/public/apex/cms/article/list/query?type=1&pageNo=1&pageSize=10&catalogId=48'
-        response = requests.get(url, headers={'User-Agent': self.user_agent.random},impersonate='chrome')
+        response = requests.get(url, headers=self.default_headers,cookies=self.default_cookies,impersonate='chrome')
         response.raise_for_status()  # 检查请求是否成功
         data = response.json()
         articles=data.get('data', {} ).get('catalogs', [{}])[0].get('articles', [])
@@ -48,7 +58,7 @@ class BinanceSpider(SpiderBase):
         :return: 活动公告列表
         """
         url='https://www.binance.com/bapi/apex/v1/public/apex/cms/article/list/query?type=1&pageNo=1&pageSize=10&catalogId=93'
-        response = requests.get(url, headers={'User-Agent': self.user_agent.random},impersonate='chrome')
+        response = requests.get(url, headers=self.default_headers,cookies=self.default_cookies,impersonate='chrome')
         response.raise_for_status()  # 检查请求是否成功
         data = response.json()
         articles=data.get('data', {} ).get('catalogs', [{}])[0].get('articles', [])
@@ -71,7 +81,7 @@ class BinanceSpider(SpiderBase):
         :return: 最新动态公告列表
         """
         url='https://www.binance.com/bapi/apex/v1/public/apex/cms/article/list/query?type=1&pageNo=1&pageSize=10&catalogId=49'
-        response = requests.get(url, headers={'User-Agent': self.user_agent.random},impersonate='chrome')
+        response = requests.get(url, headers=self.default_headers,cookies=self.default_cookies,impersonate='chrome')
         response.raise_for_status()  # 检查请求是否成功
         data = response.json()
         articles=data.get('data', {} ).get('catalogs', [{}])[0].get('articles', [])
@@ -94,7 +104,7 @@ class BinanceSpider(SpiderBase):
         :return: 空投公告列表
         """
         url='https://www.binance.com/bapi/apex/v1/public/apex/cms/article/list/query?type=1&pageNo=1&pageSize=10&catalogId=128'
-        response = requests.get(url, headers={'User-Agent': self.user_agent.random},impersonate='chrome')
+        response = requests.get(url, headers=self.default_headers,cookies=self.default_cookies,impersonate='chrome')
         response.raise_for_status()  # 检查请求是否成功
         data = response.json()
         articles=data.get('data', {} ).get('catalogs', [{}])[0].get('articles', [])
