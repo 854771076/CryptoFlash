@@ -7,7 +7,7 @@ from typing import List, Dict
 from core.base import NotifierBase
 from utils.logger import logger
 from utils.config import config_loader
-
+import requests
 class DingTalkNotifier(NotifierBase):
     """
     钉钉通知适配器
