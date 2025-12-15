@@ -6,7 +6,8 @@ on:
     - cron: '0 * * * *'
   # 允许手动触发
   workflow_dispatch:
-
+permissions:
+    contents: write  # 赋予写仓库内容的权限
 jobs:
   run-cryptoflash:
     runs-on: ubuntu-latest
