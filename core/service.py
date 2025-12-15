@@ -176,20 +176,20 @@ class CryptoFlashService:
         markdown_content = "# CryptoFlash 最新资讯\n\n"
         
         for source, items in data_by_source.items():
-            markdown_content += f"## {source}\n\n"
+            markdown_content += f"### {source}\n\n"
             
-            for item in items:
+            for index,item in enumerate(items):
                 title = item.get("title", "无标题")
                 url = item.get("url", "")
                 publish_time = item.get("publish_time") or item.get("pub_time", "未知时间")
                 
                 # 生成带超链接的标题
                 if url:
-                    markdown_content += f"- [{title}]({url})\n"
+                    markdown_content += f"{index+1}. [{title}]({url})\n"
                 else:
-                    markdown_content += f"- {title}\n"
-            
-            markdown_content += "\n"
+                    markdown_content += f"{index+1}. {title}\n"
+
+            markdown_content += "------ \n"
         
         return markdown_content
     
