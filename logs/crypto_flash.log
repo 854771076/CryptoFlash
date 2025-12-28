@@ -9236,3 +9236,39 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2025-12-28 09:19:08 - CryptoFlash - INFO - 没有数据需要推送
 2025-12-28 09:19:08 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2025-12-28 09:19:08 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2025-12-28 10:19:10 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2025-12-28 10:19:10 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2025-12-28 10:19:10 - CryptoFlash - INFO - 最大线程数：5
+2025-12-28 10:19:10 - CryptoFlash - INFO - 初始化爬虫适配器...
+2025-12-28 10:19:10 - CryptoFlash - INFO - 成功初始化 2 个爬虫适配器
+2025-12-28 10:19:10 - CryptoFlash - INFO - 初始化通知适配器...
+2025-12-28 10:19:10 - CryptoFlash - ERROR - 初始化通知适配器 EmailNotifier 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 53, in init_notifiers
+    self.notifiers.append(notifier_cls())
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 24, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2025-12-28 10:19:10 - CryptoFlash - INFO - 成功初始化 2 个通知适配器
+2025-12-28 10:19:10 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2025-12-28 10:19:10 - CryptoFlash - INFO - 开始爬取数据...
+2025-12-28 10:19:10 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2025-12-28 10:19:10 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2025-12-28 10:19:10 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2025-12-28 10:19:11 - CryptoFlash - INFO - 数据爬取完成，共获取 57 条数据
+2025-12-28 10:19:11 - CryptoFlash - INFO - 开始处理 57 条数据...
+2025-12-28 10:19:11 - CryptoFlash - INFO - 批量插入成功: 5 条记录
+2025-12-28 10:19:11 - CryptoFlash - INFO - 成功将 5 个新标题的md5值保存到数据库
+2025-12-28 10:19:11 - CryptoFlash - INFO - 数据处理完成，处理后剩余 5 条新数据
+2025-12-28 10:19:11 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### foresightnews
+
+1. [Lighter 创始人：此前 LIT 代币大额转账与空投无关，APP 或将在未来几周内上线](https://x....
+2025-12-28 10:19:11 - CryptoFlash - INFO - 开始推送 5 条数据...
+2025-12-28 10:19:11 - CryptoFlash - INFO - 开始推送 5 条数据到钉钉（批量）
+2025-12-28 10:19:13 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2025-12-28 10:19:13 - CryptoFlash - INFO - 开始推送 5 条数据到Bark（批量）
+2025-12-28 10:19:14 - CryptoFlash - INFO - 所有数据推送Bark成功
+2025-12-28 10:19:14 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2025-12-28 10:19:14 - CryptoFlash - INFO - CryptoFlash应用运行成功
