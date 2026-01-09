@@ -5,3 +5,4 @@ pyyaml==6.0.1
 curl_cffi==0.9.0
 fake_useragent==1.5.1
 urllib3==1.25.11
+bs4

@@ -9,7 +9,8 @@ spiders:
     url: "https://www.binance.com/zh-CN/support/announcement"  # 币安公告地址 (环境变量: BINANCE_URL)
   foresight_news:
     url: "https://foresightnews.pro/news"  # FORESIGHTNEWS地址 (环境变量: FORESIGHT_NEWS_URL)
-
+  okx_boost:
+    url: "https://bscscan.com/address/0x000310fa98e36191ec79de241d72c6ca093eafd3"
 # 通知配置
 notifiers:
   dingtalk:
