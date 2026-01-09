@@ -37,7 +37,7 @@ class OkxBoostSpider(SpiderBase):
         for row in rows[1:]:
             cols=row.find_all('td')
             result.append({
-                'name':f'okx_boost活动部署-{cols[1].text.strip()}',
+                'title':f'okx_boost活动部署-{cols[1].text.strip()}',
                 'url':f'https://bscscan.com/tx/{cols[1].text.strip()}',
                 'publish_time':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                 'source':self.source
