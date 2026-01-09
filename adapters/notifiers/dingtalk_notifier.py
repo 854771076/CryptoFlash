@@ -13,12 +13,13 @@ class DingTalkNotifier(NotifierBase):
     钉钉通知适配器
     """
     name='dingtalk'
-    def __init__(self):
+    def __init__(self, config: Dict = None):
         """
         初始化钉钉通知器
         """
-        self.webhook = config_loader.get_config("notifiers", "dingtalk").get("webhook")
-        self.secret = config_loader.get_config("notifiers", "dingtalk").get("secret")
+        super().__init__(config)
+        self.webhook = self.config.get("webhook")
+        self.secret = self.config.get("secret") 
         assert self.webhook, "钉钉通知器未配置webhook"
         assert self.secret, "钉钉通知器未配置secret"
     

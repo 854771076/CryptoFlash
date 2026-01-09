@@ -12,11 +12,14 @@ class OkxBoostSpider(SpiderBase):
     okx_boost爬虫适配器
     """
     name='okx_boost'
-    def __init__(self):
+    def __init__(self, config: Dict = None):
         """
         初始化爬虫
         """
-        self.url = config_loader.get_config("spiders", "okx_boost").get("url")
+        super().__init__(config)
+        self.url = self.config.get("url")
+        if not self.url:
+            self.url = config_loader.get_config("spiders", "okx_boost").get("url")
         self.source = "okx_boost"
         self.user_agent = UserAgent()
         self.default_headers={

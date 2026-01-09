@@ -7,6 +7,14 @@ class SpiderBase(ABC):
     所有爬虫适配器的基类，定义统一的爬取接口
     """
     
+    def __init__(self, config: Dict = None):
+        """
+        初始化爬虫适配器
+        
+        :param config: 爬虫配置字典
+        """
+        self.config = config or {}
+    
     @abstractmethod
     def fetch_data(self) -> List[Dict]:
         """
@@ -31,6 +39,15 @@ class NotifierBase(ABC):
     """
     所有通知适配器的基类，定义统一的发送接口
     """
+    
+    def __init__(self, config: Dict = None):
+        """
+        初始化通知适配器
+        
+        :param config: 通知配置字典
+        """
+        self.config = config or {}
+        self.sources = self.config.get("sources", [])
     
     @abstractmethod
     def send_notification(self, data: List[Dict], markdown_content: str = None) -> bool:

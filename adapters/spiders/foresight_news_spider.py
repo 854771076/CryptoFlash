@@ -13,11 +13,14 @@ class ForesightNewsSpider(SpiderBase):
     ForesightNews爬虫适配器
     """
     name='foresight_news'
-    def __init__(self):
+    def __init__(self, config: Dict = None):
         """
         初始化ForesightNews爬虫
         """
-        self.url = config_loader.get_config("spiders", "foresight_news").get("url")
+        super().__init__(config)
+        self.url = self.config.get("url")
+        if not self.url:
+             self.url = config_loader.get_config("spiders", "foresight_news").get("url")
         self.source = "foresightnews"
         self.user_agent = UserAgent()
     

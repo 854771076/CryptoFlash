@@ -33,9 +33,32 @@ class CryptoFlashService:
         """
         logger.info("初始化爬虫适配器...")
         try:
-            # 添加所有爬虫适配器
-            for spider_cls in SpiderBase.__subclasses__():
-                self.spiders.append(spider_cls())
+            # 获取爬虫配置列表
+            spiders_config = self.config.get("spiders", [])
+            if not spiders_config:
+                logger.warning("未找到爬虫配置")
+                return
+
+            # 建立爬虫类型到类的映射
+            spider_classes = {cls.name: cls for cls in SpiderBase.__subclasses__()}
+            
+            for spider_conf in spiders_config:
+                spider_type = spider_conf.get("type")
+                if not spider_type:
+                    logger.warning(f"爬虫配置缺少type字段: {spider_conf}")
+                    continue
+                
+                spider_cls = spider_classes.get(spider_type)
+                if not spider_cls:
+                    logger.warning(f"未找到类型为 {spider_type} 的爬虫适配器")
+                    continue
+                
+                try:
+                    # 实例化爬虫，传入配置
+                    self.spiders.append(spider_cls(spider_conf))
+                except Exception as e:
+                    logger.exception(f"初始化爬虫 {spider_type} 失败: {e}")
+            
             logger.info(f"成功初始化 {len(self.spiders)} 个爬虫适配器")
         except Exception as e:
             logger.exception(f"初始化爬虫适配器失败: {e}")
@@ -47,12 +70,42 @@ class CryptoFlashService:
         """
         logger.info("初始化通知适配器...")
         try:
-            # 添加所有通知适配器
-            for notifier_cls in NotifierBase.__subclasses__():
+            # 获取通知配置列表
+            notifiers_config = self.config.get("notifiers", [])
+            if not notifiers_config:
+                logger.warning("未找到通知配置")
+                return
+
+            # 建立通知类型到类的映射
+            # 注意：这里假设NotifierBase子类没有定义name属性，或者我们需要一种方式来映射
+            # 简单起见，我们假设子类名小写去掉'notifier'后缀即为type，或者我们修改子类添加name属性
+            # 为了更稳健，我们先遍历所有子类，尝试匹配
+            # 更好的方式是在NotifierBase子类中也定义name属性，类似于SpiderBase
+            # 暂时我们用类名匹配：DingTalkNotifier -> dingtalk
+            notifier_classes = {}
+            for cls in NotifierBase.__subclasses__():
+                # 尝试获取name属性，如果没有则从类名推断
+                type_name = getattr(cls, 'name', None)
+                if not type_name:
+                    type_name = cls.__name__.lower().replace('notifier', '')
+                notifier_classes[type_name] = cls
+            
+            for notifier_conf in notifiers_config:
+                notifier_type = notifier_conf.get("type")
+                if not notifier_type:
+                    logger.warning(f"通知配置缺少type字段: {notifier_conf}")
+                    continue
+                
+                notifier_cls = notifier_classes.get(notifier_type)
+                if not notifier_cls:
+                    logger.warning(f"未找到类型为 {notifier_type} 的通知适配器")
+                    continue
+                
                 try:
-                    self.notifiers.append(notifier_cls())
+                    self.notifiers.append(notifier_cls(notifier_conf))
                 except Exception as e:
-                    logger.exception(f"初始化通知适配器 {notifier_cls.__name__} 失败: {e}")
+                    logger.exception(f"初始化通知适配器 {notifier_type} 失败: {e}")
+            
             logger.info(f"成功初始化 {len(self.notifiers)} 个通知适配器")
         except Exception as e:
             logger.exception(f"初始化通知适配器失败: {e}")
@@ -70,7 +123,9 @@ class CryptoFlashService:
             for spider in self.spiders:
                 future = executor.submit(spider.fetch_data)
                 try:
-                    self.data.extend(future.result())
+                    result = future.result()
+                    if result:
+                        self.data.extend(result)
                 except Exception as e:
                     logger.exception(f"爬虫 {spider.__class__.__name__} 爬取失败: {e}")
                     continue
@@ -141,7 +196,26 @@ class CryptoFlashService:
         result_list=[]
         with ThreadPoolExecutor(max_workers=int(self.config.get('pool', {}).get('max_workers', 5))) as executor:
             for notifier in self.notifiers:
-                future = executor.submit(notifier.send_notification, data, markdown_content)
+                # 过滤数据
+                filtered_data = data
+                if notifier.sources:
+                    filtered_data = [item for item in data if item.get("source") in notifier.sources]
+                
+                if not filtered_data:
+                    logger.info(f"通知器 {notifier.__class__.__name__} 没有匹配的数据需要推送")
+                    continue
+                
+                # 如果数据被过滤了，需要重新生成markdown内容
+                # 注意：这里为了简单，如果数据被过滤，我们可能需要重新生成markdown，或者让notifier自己处理
+                # 但目前的架构是service生成markdown传给notifier。
+                # 如果notifier只发部分数据，传入全量的markdown是不对的。
+                # 所以这里应该为每个notifier生成特定的markdown
+                
+                current_markdown = markdown_content
+                if len(filtered_data) != len(data):
+                     current_markdown = self.generate_notification_content(filtered_data)
+
+                future = executor.submit(notifier.send_notification, filtered_data, current_markdown)
                 try:
                     result_list.append(future.result())
                 except Exception as e:

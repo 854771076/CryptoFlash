@@ -10,11 +10,17 @@ class BinanceSpider(SpiderBase):
     币安公告爬虫适配器
     """
     name='binance'
-    def __init__(self):
+    def __init__(self, config: Dict = None):
         """
         初始化币安爬虫
         """
-        self.url = config_loader.get_config("spiders", "binance").get("url")
+        super().__init__(config)
+        self.url = self.config.get("url")
+        if not self.url:
+             # Fallback to old way or default if needed, but better to rely on passed config
+             # For backward compatibility during transition or testing if config is empty
+             self.url = config_loader.get_config("spiders", "binance").get("url")
+             
         self.source = "binance"
         self.user_agent = UserAgent()
         self.default_headers={

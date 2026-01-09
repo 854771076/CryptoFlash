@@ -10,13 +10,14 @@ class BarkNotifier(NotifierBase):
     """
     name='bark'
     
-    def __init__(self):
+    def __init__(self, config: Dict = None):
         """
         初始化Bark通知器
         """
-        self.api_url = config_loader.get_config("notifiers", "bark").get("api_url", "https://api.day.app")
-        self.device_key = config_loader.get_config("notifiers", "bark").get("device_key")
-        self.group = config_loader.get_config("notifiers", "bark").get("group", "crypto_flash")
+        super().__init__(config)
+        self.api_url = self.config.get("api_url") 
+        self.device_key = self.config.get("device_key") 
+        self.group = self.config.get("group")
         
         assert self.device_key, "Bark通知器未配置device_key"
     

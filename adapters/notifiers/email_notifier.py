@@ -11,11 +11,12 @@ class EmailNotifier(NotifierBase):
     邮件通知适配器
     """
     name='email'
-    def __init__(self):
+    def __init__(self, config: Dict = None):
         """
         初始化邮件通知器
         """
-        email_config = config_loader.get_config("notifiers", "email")
+        super().__init__(config)
+        email_config = self.config
         self.smtp_server = email_config.get("smtp_server")
         self.smtp_port = email_config.get("smtp_port", 465)  # 默认465端口
         self.smtp_user = email_config.get("smtp_user")

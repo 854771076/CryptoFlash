@@ -159,31 +159,23 @@ python main.py
 ```yaml
 # 爬虫配置
 spiders:
-  binance:
-    url: "https://www.binance.com/cn/support/announcement/c-48"
-  foresight_news:
-    url: "https://www.foresightnews.pro/"
+  - type: binance
+    url: "https://www.binance.com/zh-CN/support/announcement"
+  - type: foresight_news
+    url: "https://foresightnews.pro/news"
+  - type: okx_boost
+    url: "https://bscscan.com/address/0x000310fa98e36191ec79de241d72c6ca093eafd3"
 
 # 通知配置
 notifiers:
-  # 钉钉机器人配置
-  dingtalk:
+  - type: dingtalk
     webhook: "https://oapi.dingtalk.com/robot/send?access_token=your-token"
-    secret: "your-secret"  # 可选，用于签名认证
-  # 邮箱配置
-  email:
-    smtp_server: "smtp.163.com"
-    smtp_port: 465
-    smtp_user: "your-email@163.com"
-    smtp_password: "your-password"
-    to_emails: ["recipient1@example.com", "recipient2@example.com"]
-
-# 系统配置
-pool:
-  max_workers: 4  # 最大线程数
-
-logger:
-  level: INFO  # 日志级别：DEBUG, INFO, WARNING, ERROR, CRITICAL
+    secret: "your-secret"
+    sources: ["binance"] # 可选，只接收指定来源的通知
+  - type: bark
+    api_url: "https://api.day.app"
+    device_key: "your-device-key"
+    sources: [] # 为空则接收所有来源
 ```
 
 ### 配置说明
@@ -227,18 +219,22 @@ python main.py
 
 ### GitHub Actions 自动化运行
 
-系统已配置GitHub Actions工作流，支持定时运行爬虫任务：
+系统支持通过环境变量进行全量配置，且支持多实例配置：
 
-1. 在GitHub仓库中设置以下Secrets：
+1. **基础配置**：
    - `DINGTALK_WEBHOOK`: 钉钉机器人Webhook
-   - `DINGTALK_SECRET`: 钉钉机器人密钥（可选）
-   - `EMAIL_SMTP_SERVER`: SMTP服务器
-   - `EMAIL_SMTP_PORT`: SMTP端口
-   - `EMAIL_SMTP_USER`: 发件人邮箱
-   - `EMAIL_SMTP_PASSWORD`: 邮箱密码
-   - `EMAIL_TO_EMAILS`: 收件人邮箱
+   - `DINGTALK_SECRET`: 钉钉机器人密钥
+   - `DINGTALK_SOURCES`: 来源过滤（逗号分隔，如 `binance,foresightnews`）
 
-2. 工作流将按照`.github/workflows/main.yml`中定义的时间间隔自动运行。
+2. **多实例配置**：
+   如果需要配置多个同类型的通知器，可以使用逗号分隔（不在中括号内的逗号）：
+   - `DINGTALK_WEBHOOK`: "url1,url2"
+   - `DINGTALK_SOURCES`: "['binance'],['foresightnews']"
+   
+   上述配置将创建两个钉钉通知器，第一个只监听币安，第二个只监听ForesightNews。
+
+3. **GitHub Secrets 设置**：
+   在GitHub仓库中设置相应的Secrets，工作流将自动加载并运行。
 
 ## 🧩 开发指南
 
