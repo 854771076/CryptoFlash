@@ -1,6 +1,6 @@
 from typing import List, Dict
 from core.base import SpiderBase, NotifierBase
-from adapters.spiders import BinanceSpider, ForesightNewsSpider
+from adapters.spiders import BinanceSpider, ForesightNewsSpider,OkxBoostSpider
 from adapters.notifiers import DingTalkNotifier, EmailNotifier
 from utils.logger import logger
 from utils.database import db_manager
