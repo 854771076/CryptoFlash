@@ -17551,3 +17551,51 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-09 08:57:42 - CryptoFlash - INFO - 所有数据推送Bark成功
 2026-01-09 08:57:42 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-09 08:57:42 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-09 09:00:16 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-09 09:00:16 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-09 09:00:16 - CryptoFlash - INFO - 最大线程数：5
+2026-01-09 09:00:16 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-09 09:00:16 - CryptoFlash - INFO - 成功初始化 3 个爬虫适配器
+2026-01-09 09:00:16 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-09 09:00:16 - CryptoFlash - ERROR - 初始化通知适配器 EmailNotifier 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 53, in init_notifiers
+    self.notifiers.append(notifier_cls())
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 24, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-09 09:00:16 - CryptoFlash - INFO - 成功初始化 2 个通知适配器
+2026-01-09 09:00:16 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-09 09:00:16 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-09 09:00:16 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-09 09:00:16 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-09 09:00:16 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-09 09:00:18 - CryptoFlash - INFO - 数据爬取完成，共获取 87 条数据
+2026-01-09 09:00:18 - CryptoFlash - INFO - 开始处理 87 条数据...
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x8ba0a2bc2c4c5596d74bce9cef18347e2af5cf16d9a37fdf673dddc271cb5534', 'url': 'https://bscscan.com/tx/0x8ba0a2bc2c4c5596d74bce9cef18347e2af5cf16d9a37fdf673dddc271cb5534', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x75e044b097ff9dba658592a5fb3292bc03258dcc646d1e8c6a9bd0eb06e7c5a1', 'url': 'https://bscscan.com/tx/0x75e044b097ff9dba658592a5fb3292bc03258dcc646d1e8c6a9bd0eb06e7c5a1', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0xeb596583db6cb4eda8ba094741223359f487b5fc8986ab71bf71c8734f7304ef', 'url': 'https://bscscan.com/tx/0xeb596583db6cb4eda8ba094741223359f487b5fc8986ab71bf71c8734f7304ef', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x37c99ae9885fdfd31643d2fc99dd4b98bc27dce245bd487eb3e7fd5080673e69', 'url': 'https://bscscan.com/tx/0x37c99ae9885fdfd31643d2fc99dd4b98bc27dce245bd487eb3e7fd5080673e69', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x1b3a997d14d821ee801cdc13872ca509b5ebda133d35a568841be2e95d899042', 'url': 'https://bscscan.com/tx/0x1b3a997d14d821ee801cdc13872ca509b5ebda133d35a568841be2e95d899042', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x57a6a7216a685acc047b897fb2f02e7271f0e76dcd536b82fc83c1910a70552d', 'url': 'https://bscscan.com/tx/0x57a6a7216a685acc047b897fb2f02e7271f0e76dcd536b82fc83c1910a70552d', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x2326e8fca2f3a9812e26f7c764e395a8decd5d427ecfb76a5a62266973eba8a6', 'url': 'https://bscscan.com/tx/0x2326e8fca2f3a9812e26f7c764e395a8decd5d427ecfb76a5a62266973eba8a6', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0xc587bd319d4cb98f86393a87976573cb5f663baa65c3d235cf5c070d59dd2060', 'url': 'https://bscscan.com/tx/0xc587bd319d4cb98f86393a87976573cb5f663baa65c3d235cf5c070d59dd2060', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x7eb7cabf75a6a2a3de0ad43fd53fb3c6e4b5074c405c55b536d0485eb4decaac', 'url': 'https://bscscan.com/tx/0x7eb7cabf75a6a2a3de0ad43fd53fb3c6e4b5074c405c55b536d0485eb4decaac', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x2e05b85ceeb645bef9cade1dbd0a27df1eb645c40ef4a254ea886c537a8e4891', 'url': 'https://bscscan.com/tx/0x2e05b85ceeb645bef9cade1dbd0a27df1eb645c40ef4a254ea886c537a8e4891', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0xe19f760499679ac616b28b6a9d0a6e28b001fdb3ba08172e903df391cd3534ac', 'url': 'https://bscscan.com/tx/0xe19f760499679ac616b28b6a9d0a6e28b001fdb3ba08172e903df391cd3534ac', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x5c7865d898ebafc16037a5e0f16adc1c36daa140e5df493a754d36e4fd51b493', 'url': 'https://bscscan.com/tx/0x5c7865d898ebafc16037a5e0f16adc1c36daa140e5df493a754d36e4fd51b493', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x5827a1f30e25d535e93afab32c492a8d5211a7cba46dcde2bf3c1d8c5d184a0b', 'url': 'https://bscscan.com/tx/0x5827a1f30e25d535e93afab32c492a8d5211a7cba46dcde2bf3c1d8c5d184a0b', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x20ce9ad31c5d2f8c7eb3324535d57e54fca7e4c6bfe851d05eb7dc584f162ea9', 'url': 'https://bscscan.com/tx/0x20ce9ad31c5d2f8c7eb3324535d57e54fca7e4c6bfe851d05eb7dc584f162ea9', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0xd835533860679bd477404f4e62b82f94475dcde250d1c65f0ca99ede6a1eeaea', 'url': 'https://bscscan.com/tx/0xd835533860679bd477404f4e62b82f94475dcde250d1c65f0ca99ede6a1eeaea', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x40c5a6042b2b2e020d9183f37236e7679214fe9593c602251b31b321331817ec', 'url': 'https://bscscan.com/tx/0x40c5a6042b2b2e020d9183f37236e7679214fe9593c602251b31b321331817ec', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0xfa12ba1dd67480fe48b330c0d07ed4ec3e6539b8585881974c4d3d131aa985ab', 'url': 'https://bscscan.com/tx/0xfa12ba1dd67480fe48b330c0d07ed4ec3e6539b8585881974c4d3d131aa985ab', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x327c9c9f76e9abeb8c73b00811376bc0aba04a5618e11d05bf8d6c93d9a69921', 'url': 'https://bscscan.com/tx/0x327c9c9f76e9abeb8c73b00811376bc0aba04a5618e11d05bf8d6c93d9a69921', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x12ac579c7372d486e8703da63161543e0b82f5febcbab6d82f56fe83230ced89', 'url': 'https://bscscan.com/tx/0x12ac579c7372d486e8703da63161543e0b82f5febcbab6d82f56fe83230ced89', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x5f5de10d3f02170bda58daa94ba54af903981df2782b1f23eadf44d0528ad11a', 'url': 'https://bscscan.com/tx/0x5f5de10d3f02170bda58daa94ba54af903981df2782b1f23eadf44d0528ad11a', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0x288bf41df431e410550a6caf9fc79408e777b54e2406318ab2912c177c6bd38d', 'url': 'https://bscscan.com/tx/0x288bf41df431e410550a6caf9fc79408e777b54e2406318ab2912c177c6bd38d', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - WARNING - 数据项缺少标题字段: {'name': 'okx_boost活动部署-0xa5221a2316fddd95478999181a827e039f9cfed1754dfa0bd00519dea5933f4b', 'url': 'https://bscscan.com/tx/0xa5221a2316fddd95478999181a827e039f9cfed1754dfa0bd00519dea5933f4b', 'publish_time': '2026-01-09 09:00:18', 'source': 'okx_boost'}
+2026-01-09 09:00:18 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-01-09 09:00:18 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-01-09 09:00:18 - CryptoFlash - INFO - 没有数据需要推送
+2026-01-09 09:00:18 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-09 09:00:18 - CryptoFlash - INFO - CryptoFlash应用运行成功
