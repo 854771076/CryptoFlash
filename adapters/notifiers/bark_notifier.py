@@ -169,6 +169,8 @@ class BarkNotifier(NotifierBase):
             return True
         except requests.RequestException as e:
             logger.error(f"请求Bark API失败: {e}")
+            if 'response' in locals():
+                logger.error(f"Bark API返回: {response.json()}")
             return False
         except Exception as e:
             logger.error(f"推送数据到Bark失败: {e}")
