@@ -15,9 +15,9 @@ class BarkNotifier(NotifierBase):
         初始化Bark通知器
         """
         super().__init__(config)
-        self.api_url = self.config.get("api_url") 
+        self.api_url = self.config.get("api_url") or "https://api.day.app"
         self.device_key = self.config.get("device_key") 
-        self.group = self.config.get("group")
+        self.group = self.config.get("group") or "crypto_flash"
         
         assert self.device_key, "Bark通知器未配置device_key"
     

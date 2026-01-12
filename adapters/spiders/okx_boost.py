@@ -79,5 +79,7 @@ class OkxBoostSpider(SpiderBase):
     def fetch_data(self) -> List[Dict]:
           results=[]
           results.extend(self.bnb_chain())
+          results.extend(self.arb_chain())
+          results.extend(self.base_chain())
           return results
 
