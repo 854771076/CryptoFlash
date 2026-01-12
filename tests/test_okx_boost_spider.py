@@ -5,8 +5,12 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from adapters.spiders.okx_boost import OkxBoostSpider
-
+from utils.config import config_loader
 if __name__ == "__main__":
-    spider = OkxBoostSpider()
-    data = spider.fetch_data()
+    configs=config_loader.get_config("spiders")
+    for i in configs:
+        if i.get("type") == "okx_boost":
+            config=i
+    spider = OkxBoostSpider(config)
+    data = spider.base_chain()
     print(data)

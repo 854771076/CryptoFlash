@@ -28,9 +28,7 @@ class OkxBoostSpider(SpiderBase):
         self.default_cookies={
         }
 
-    
-
-    def fetch_data(self) -> List[Dict]:
+    def bnb_chain(self):
         html=requests.get(self.url,headers=self.default_headers,cookies=self.default_cookies,impersonate='chrome').text
         soup=BeautifulSoup(html,'html.parser')
         # class="table-responsive"
@@ -40,11 +38,46 @@ class OkxBoostSpider(SpiderBase):
         for row in rows[1:]:
             cols=row.find_all('td')
             result.append({
-                'title':f'okx_boost活动部署-{cols[1].text.strip()}',
+                'title':f'Okx_Boost活动部署(BNB)-{cols[1].text.strip()}',
                 'url':f'https://bscscan.com/tx/{cols[1].text.strip()}',
                 'publish_time':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                 'source':self.source
             })
-        return result  
-
+        return result
+    def arb_chain(self):
+        html=requests.get('https://arbiscan.io/address/0x000310fa98e36191ec79de241d72c6ca093eafd3',headers=self.default_headers,cookies=self.default_cookies,impersonate='chrome').text
+        soup=BeautifulSoup(html,'html.parser')
+        # class="table-responsive"
+        table=soup.find('table')
+        rows=table.find_all('tr')
+        result=[]
+        for row in rows[1:]:
+            cols=row.find_all('td')
+            result.append({
+                'title':f'Okx_Boost活动部署(ARB)-{cols[1].text.strip()}',
+                'url':f'https://https://arbiscan.io/tx/{cols[1].text.strip()}',
+                'publish_time':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'source':self.source
+            })
+        return result
+    def base_chain(self):
+        html=requests.get('https://basescan.org/address/0x000310fa98e36191ec79de241d72c6ca093eafd3',headers=self.default_headers,cookies=self.default_cookies,impersonate='chrome').text
+        soup=BeautifulSoup(html,'html.parser')
+        # class="table-responsive"
+        table=soup.find('table')
+        rows=table.find_all('tr')
+        result=[]
+        for row in rows[1:]:
+            cols=row.find_all('td')
+            result.append({
+                'title':f'Okx_Boost活动部署(BASE)-{cols[1].text.strip()}',
+                'url':f'https://basescan.org/tx/{cols[1].text.strip()}',
+                'publish_time':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'source':self.source
+            })
+        return result
+    def fetch_data(self) -> List[Dict]:
+          results=[]
+          results.extend(self.bnb_chain())
+          return results
 
