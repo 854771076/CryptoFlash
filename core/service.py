@@ -155,7 +155,7 @@ class CryptoFlashService:
             new_titles = []
             
             for item in data:
-                title = item.get("id", "")
+                title = item.get("id", item.get("title", ""))
                 if title:
                     # 检查标题是否已存在于数据库中
                     if not db_manager.exists(title):
