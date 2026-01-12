@@ -13,6 +13,8 @@ class ConfigLoader:
     # 配置项与环境变量的映射关系
     CONFIG_ENV_MAP = {
         # 钉钉通知配置
+        "spiders.twitter.nitter_instance": "NITTER_INSTANCE",
+        "spiders.twitter.username": "TWITTER_USERNAME",
         "notifiers.dingtalk.webhook": "DINGTALK_WEBHOOK",
         "notifiers.dingtalk.secret": "DINGTALK_SECRET",
         "notifiers.dingtalk.sources": "DINGTALK_SOURCES",

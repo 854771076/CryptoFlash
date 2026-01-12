@@ -45,6 +45,7 @@ class ForesightNewsSpider(SpiderBase):
                 if json_data:
                     for item in json_data[0].get('news',[]):
                         news.append({
+                            'id':item.get('source_link'),
                             'title':item.get('title'),
                             'url':item.get('source_link'),
                             'source':self.source,

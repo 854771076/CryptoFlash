@@ -52,8 +52,11 @@ jobs:
         BINANCE_URL: ${{ secrets.BINANCE_URL }}
         FORESIGHT_NEWS_URL: ${{ secrets.FORESIGHT_NEWS_URL }}
         OKX_BOOST_URL: ${{ secrets.OKX_BOOST_URL }}
+        NITTER_INSTANCE: ${{ secrets.NITTER_INSTANCE }}
+        TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
         
         POOL_MAX_WORKERS: ${{ secrets.POOL_MAX_WORKERS || 5 }}
+
       run: |
         python main.py
     

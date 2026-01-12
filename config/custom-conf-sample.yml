@@ -12,6 +12,9 @@ spiders:
     url: "https://foresightnews.pro/news"  # FORESIGHTNEWS地址 (环境变量: FORESIGHT_NEWS_URL)
   - type: okx_boost
     url: "https://bscscan.com/address/0x000310fa98e36191ec79de241d72c6ca093eafd3"
+  # - type: twitter
+  #   username: "Wuming_Mr_"
+  #   nitter_instance: "https://nitter.net"
 
 # 通知配置
 notifiers:

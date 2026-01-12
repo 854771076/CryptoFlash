@@ -38,6 +38,7 @@ class OkxBoostSpider(SpiderBase):
         for row in rows[1:]:
             cols=row.find_all('td')
             result.append({
+                'id':cols[1].text.strip(),
                 'title':f'Okx_Boost活动部署(BNB)-{cols[1].text.strip()}',
                 'url':f'https://bscscan.com/tx/{cols[1].text.strip()}',
                 'publish_time':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
@@ -54,6 +55,7 @@ class OkxBoostSpider(SpiderBase):
         for row in rows[1:]:
             cols=row.find_all('td')
             result.append({
+                'id':cols[1].text.strip(),
                 'title':f'Okx_Boost活动部署(ARB)-{cols[1].text.strip()}',
                 'url':f'https://https://arbiscan.io/tx/{cols[1].text.strip()}',
                 'publish_time':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
@@ -70,6 +72,7 @@ class OkxBoostSpider(SpiderBase):
         for row in rows[1:]:
             cols=row.find_all('td')
             result.append({
+                'id':cols[1].text.strip(),
                 'title':f'Okx_Boost活动部署(BASE)-{cols[1].text.strip()}',
                 'url':f'https://basescan.org/tx/{cols[1].text.strip()}',
                 'publish_time':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

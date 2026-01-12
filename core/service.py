@@ -1,6 +1,6 @@
 from typing import List, Dict
 from core.base import SpiderBase, NotifierBase
-from adapters.spiders import BinanceSpider, ForesightNewsSpider,OkxBoostSpider
+from adapters.spiders import BinanceSpider, ForesightNewsSpider,OkxBoostSpider,TwitterSpider
 from adapters.notifiers import DingTalkNotifier, EmailNotifier
 from utils.logger import logger
 from utils.database import db_manager
@@ -155,7 +155,7 @@ class CryptoFlashService:
             new_titles = []
             
             for item in data:
-                title = item.get("title", "")
+                title = item.get("id", "")
                 if title:
                     # 检查标题是否已存在于数据库中
                     if not db_manager.exists(title):

@@ -49,6 +49,7 @@ class BinanceSpider(SpiderBase):
         result = []
         for article in articles:
             result.append({
+                'id':article.get('code', ''),
                 "title": article.get('title', ''),
                 "url": 'https://www.binance.com/zh-CN/support/announcement/detail/'+article.get('code', ''),
                 "publish_time": time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(article.get('releaseDate', 0)/1000)),
@@ -72,6 +73,7 @@ class BinanceSpider(SpiderBase):
         result = []
         for article in articles:
             result.append({
+                'id':article.get('code', ''),
                 "title": article.get('title', ''),
                 "url": 'https://www.binance.com/zh-CN/support/announcement/detail/'+article.get('code', ''),
                 "publish_time": time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(article.get('releaseDate', 0)/1000)),
@@ -95,6 +97,7 @@ class BinanceSpider(SpiderBase):
         result = []
         for article in articles:
             result.append({
+                'id':article.get('code', ''),
                 "title": article.get('title', ''),
                 "url": 'https://www.binance.com/zh-CN/support/announcement/detail/'+article.get('code', ''),
                 "publish_time": time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(article.get('releaseDate', 0)/1000)),
@@ -118,6 +121,7 @@ class BinanceSpider(SpiderBase):
         result = []
         for article in articles:
             result.append({
+                'id':article.get('code', ''),
                 "title": article.get('title', ''),
                 "url": 'https://www.binance.com/zh-CN/support/announcement/detail/'+article.get('code', ''),
                 "publish_time": time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(article.get('releaseDate', 0)/1000)),
