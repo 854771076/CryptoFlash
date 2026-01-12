@@ -165,6 +165,9 @@ spiders:
     url: "https://foresightnews.pro/news"
   - type: okx_boost
     url: "https://bscscan.com/address/0x000310fa98e36191ec79de241d72c6ca093eafd3"
+  - type: twitter
+    username: "Wuming_Mr_"
+    nitter_instance: "https://nitter.net"
 
 # 通知配置
 notifiers:
@@ -187,6 +190,11 @@ notifiers:
 
 - **foresight_news**: FORESIGHTNEWS资讯爬虫配置
   - `url`: FORESIGHTNEWS API URL
+
+- **twitter**: Twitter推文爬虫配置 (基于Nitter RSS)
+  - `username`: Twitter用户名 (不带@)
+  - `nitter_instance`: Nitter实例地址 (如 https://nitter.net)
+  - `url`: (可选) 直接指定RSS URL，若指定则忽略username和nitter_instance
 
 #### 2. 通知配置
 
