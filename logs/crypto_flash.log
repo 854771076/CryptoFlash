@@ -1617,3 +1617,38 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-13 19:19:15 - CryptoFlash - INFO - 没有数据需要推送
 2026-01-13 19:19:15 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-13 19:19:15 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-13 20:23:18 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-13 20:23:19 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-13 20:23:19 - CryptoFlash - INFO - 最大线程数：5
+2026-01-13 20:23:19 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-13 20:23:19 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-13 20:23:19 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-13 20:23:19 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-13 20:23:19 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-13 20:23:19 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-13 20:23:19 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-13 20:23:19 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-13 20:23:19 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-13 20:23:19 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-13 20:23:23 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-13 20:23:23 - CryptoFlash - INFO - 数据爬取完成，共获取 126 条数据
+2026-01-13 20:23:23 - CryptoFlash - INFO - 开始处理 126 条数据...
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 93000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 15:36:30'}
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bitget 股票行情：加密概念股普涨，COIN 涨 2.78%，MSTR 涨 6.55%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 14:46:10'}
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 上线「黑马」、「老子」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 12:42:27'}
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'RIVER 升至 21.84 USDT，24 小时涨超 17%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 08:48:35'}
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安公布 Fogo（FOGO）Prime Sale 参与门槛，需达到 200 分 Alpha 积分', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 07:02:32'}
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 26，市场处于「恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 00:30:00'}
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 91000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-12 21:54:20'}
+2026-01-13 20:23:23 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 92000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-12 16:28:26'}
+2026-01-13 20:23:23 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-01-13 20:23:23 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-01-13 20:23:23 - CryptoFlash - INFO - 没有数据需要推送
+2026-01-13 20:23:23 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-13 20:23:23 - CryptoFlash - INFO - CryptoFlash应用运行成功
