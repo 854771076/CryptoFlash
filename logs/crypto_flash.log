@@ -2358,3 +2358,53 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-14 14:24:03 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-01-14 14:24:03 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-14 14:24:03 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-14 15:24:08 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-14 15:24:09 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-14 15:24:09 - CryptoFlash - INFO - 最大线程数：5
+2026-01-14 15:24:09 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-14 15:24:09 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-14 15:24:09 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-14 15:24:09 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-14 15:24:09 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-14 15:24:09 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-14 15:24:09 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-14 15:24:09 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-14 15:24:09 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-14 15:24:09 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-14 15:24:13 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-14 15:24:13 - CryptoFlash - INFO - 数据爬取完成，共获取 153 条数据
+2026-01-14 15:24:13 - CryptoFlash - INFO - 开始处理 153 条数据...
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 97000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 15:13:24'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '赵长鹏谈山寨季：市场有周期性，未来肯定还会有山寨季', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 12:32:47'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '赵长鹏：对比 AI 行业，币圈更依赖 KOL', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 12:23:35'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '赵长鹏：不建议大家盯着我和何一推文发 Meme 币', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 12:13:38'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '赵长鹏：比特币肯定会到 20 万美元，但不知道什么时候', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 12:08:49'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'XMR 短时突破 700 美元，创历史新高', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 03:51:28'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'BERA 近 1 小时涨超 40%，短时触及 0.84 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 01:02:10'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数升至 48，市场转变为「中性状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 00:30:00'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 96000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 22:10:44'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊升破 3300 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 22:10:22'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 95000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 22:10:22'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 94000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 19:34:10'}
+2026-01-14 15:24:13 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊升破 3200 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-13 18:46:50'}
+2026-01-14 15:24:13 - CryptoFlash - INFO - 批量插入成功: 2 条记录
+2026-01-14 15:24:13 - CryptoFlash - INFO - 成功将 2 个新标题的md5值保存到数据库
+2026-01-14 15:24:13 - CryptoFlash - INFO - 数据处理完成，处理后剩余 2 条新数据
+2026-01-14 15:24:13 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### foresightnews
+
+1. [曾做空 255 枚 BTC 的巨鲸已全部平空，目前持 3.51 亿美元多头仓位](https://x.com/On...
+2026-01-14 15:24:13 - CryptoFlash - INFO - 开始推送 2 条数据...
+2026-01-14 15:24:13 - CryptoFlash - INFO - 开始推送 2 条数据到钉钉（批量）
+2026-01-14 15:24:14 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2026-01-14 15:24:14 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-14 15:24:14 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-14 15:24:14 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-14 15:24:14 - CryptoFlash - INFO - CryptoFlash应用运行成功
