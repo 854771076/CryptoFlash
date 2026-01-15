@@ -3376,3 +3376,52 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-15 15:23:42 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-01-15 15:23:42 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-15 15:23:42 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-15 16:33:08 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-15 16:33:08 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-15 16:33:08 - CryptoFlash - INFO - 最大线程数：5
+2026-01-15 16:33:08 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-15 16:33:08 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-15 16:33:08 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-15 16:33:08 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-15 16:33:08 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-15 16:33:08 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-15 16:33:08 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-15 16:33:08 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-15 16:33:09 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-15 16:33:09 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-15 16:33:14 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-15 16:33:14 - CryptoFlash - INFO - 数据爬取完成，共获取 153 条数据
+2026-01-15 16:33:14 - CryptoFlash - INFO - 开始处理 153 条数据...
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '谢家印：2025 年 Bitget 通过多项福利机制累计向用户空投 1.42 亿美元', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 12:31:13'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 已上线 Owlto Finance（OWL）', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 10:10:48'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 97000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 09:41:36'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 已上线「雪球」和「人生 K 线」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 08:31:36'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安公布 Owlto Finance（OWL）空投参与门槛，需达到 241 分 Alpha 积分', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 06:22:43'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 将于今日上线 Sport.Fun (FUN)', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 05:02:25'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '中文 Meme 板块热度降温，「黑马」24 小时跌幅超 66%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 03:56:28'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 96000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 03:27:42'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊跌破 3300 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 03:27:34'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'ETHGas：Discord 互动积分快照已完成', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 01:49:04'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数升至 61，市场转变为「贪婪状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-15 00:30:00'}
+2026-01-15 16:33:14 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊升破 3400 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-14 16:33:28'}
+2026-01-15 16:33:14 - CryptoFlash - INFO - 批量插入成功: 2 条记录
+2026-01-15 16:33:14 - CryptoFlash - INFO - 成功将 2 个新标题的md5值保存到数据库
+2026-01-15 16:33:14 - CryptoFlash - INFO - 数据处理完成，处理后剩余 2 条新数据
+2026-01-15 16:33:14 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### foresightnews
+
+1. [X 将禁止「infofi」类应用调用 API 访问权限，KAITO 短时跌超 20%](https://x.com...
+2026-01-15 16:33:14 - CryptoFlash - INFO - 开始推送 2 条数据...
+2026-01-15 16:33:14 - CryptoFlash - INFO - 开始推送 2 条数据到钉钉（批量）
+2026-01-15 16:33:15 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2026-01-15 16:33:15 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-15 16:33:15 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-15 16:33:15 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-15 16:33:15 - CryptoFlash - INFO - CryptoFlash应用运行成功
