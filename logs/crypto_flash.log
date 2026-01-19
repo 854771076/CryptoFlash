@@ -6268,3 +6268,48 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-19 04:50:49 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-01-19 04:50:49 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-19 04:50:49 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-19 05:30:26 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-19 05:30:26 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-19 05:30:26 - CryptoFlash - INFO - 最大线程数：5
+2026-01-19 05:30:26 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-19 05:30:26 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-19 05:30:26 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-19 05:30:26 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-19 05:30:26 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-19 05:30:26 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-19 05:30:26 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-19 05:30:26 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-19 05:30:26 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-19 05:30:26 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-19 05:30:30 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-19 05:30:30 - CryptoFlash - INFO - 数据爬取完成，共获取 102 条数据
+2026-01-19 05:30:30 - CryptoFlash - INFO - 开始处理 102 条数据...
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '美联储主席人选生变：哈塞特或退出，沃什成最大热门', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-19 01:05:30'}
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今晨现货金银同创新高', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-19 00:53:38'}
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 44，市场转变为「恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-19 00:30:00'}
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊跌破 3200 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-19 00:20:50'}
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 93000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-19 00:04:26'}
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 92000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-19 00:03:10'}
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 93000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-19 00:01:54'}
+2026-01-19 05:30:30 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 94000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-18 23:46:28'}
+2026-01-19 05:30:30 - CryptoFlash - INFO - 批量插入成功: 1 条记录
+2026-01-19 05:30:30 - CryptoFlash - INFO - 成功将 1 个新标题的md5值保存到数据库
+2026-01-19 05:30:30 - CryptoFlash - INFO - 数据处理完成，处理后剩余 1 条新数据
+2026-01-19 05:30:30 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### foresightnews
+
+1. [韩国关税厅破获利用虚拟资产进行地下汇兑案件，涉案金额约 1489 亿韩元](https://imnews.imbc...
+2026-01-19 05:30:30 - CryptoFlash - INFO - 开始推送 1 条数据...
+2026-01-19 05:30:30 - CryptoFlash - INFO - 开始推送 1 条数据到钉钉（批量）
+2026-01-19 05:30:32 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2026-01-19 05:30:32 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-19 05:30:32 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-19 05:30:32 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-19 05:30:32 - CryptoFlash - INFO - CryptoFlash应用运行成功
