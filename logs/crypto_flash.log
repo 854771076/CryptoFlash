@@ -7881,3 +7881,44 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-20 21:19:24 - CryptoFlash - INFO - 没有数据需要推送
 2026-01-20 21:19:24 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-20 21:19:24 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-20 22:21:24 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-20 22:21:24 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-20 22:21:24 - CryptoFlash - INFO - 最大线程数：5
+2026-01-20 22:21:24 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-20 22:21:24 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-20 22:21:24 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-20 22:21:24 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-20 22:21:24 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-20 22:21:24 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-20 22:21:24 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-20 22:21:24 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-20 22:21:25 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-20 22:21:25 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-20 22:21:28 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-20 22:21:28 - CryptoFlash - INFO - 数据爬取完成，共获取 145 条数据
+2026-01-20 22:21:28 - CryptoFlash - INFO - 开始处理 145 条数据...
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 已上线 Ucan fix life in1day（1）与哭哭马', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 15:16:25'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊跌破 3000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 15:09:20'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 90000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 15:08:56'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bitget 股票行情：美股开盘加密板块普跌，COIN 跌 3.5%，CRCL 跌 3.3%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 14:37:11'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'AXS 24 小时涨超 27%，一度触及 2.4 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 13:49:46'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊跌破 3100 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 08:13:16'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'SOL 跌破 130 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 08:13:11'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 将于 1 月 22 日上线 FIGHT（FIGHT）', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 07:38:16'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安公布 Acurast（ACU）空投参与门槛，需达到 241 分 Alpha 积分', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 07:01:57'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安公布 HeyElsa（ELSA）空投参与门槛，需达到 235 分 Alpha 积分', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 06:31:08'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 91000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 06:17:53'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '黄金价格短时触及 4697.48 美元，续创历史新高', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 05:02:45'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 92000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 04:58:34'}
+2026-01-20 22:21:28 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 32，市场处于「恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 00:30:00'}
+2026-01-20 22:21:28 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-01-20 22:21:28 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-01-20 22:21:28 - CryptoFlash - INFO - 没有数据需要推送
+2026-01-20 22:21:28 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-20 22:21:28 - CryptoFlash - INFO - CryptoFlash应用运行成功
