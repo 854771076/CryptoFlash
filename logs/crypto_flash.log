@@ -8737,3 +8737,40 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-21 18:40:13 - CryptoFlash - INFO - 没有数据需要推送
 2026-01-21 18:40:13 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-21 18:40:13 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-21 19:25:53 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-21 19:25:54 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-21 19:25:54 - CryptoFlash - INFO - 最大线程数：5
+2026-01-21 19:25:54 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-21 19:25:54 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-21 19:25:54 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-21 19:25:54 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-21 19:25:54 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-21 19:25:54 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-21 19:25:54 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-21 19:25:54 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-21 19:25:54 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-21 19:25:54 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-21 19:25:58 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-21 19:25:58 - CryptoFlash - INFO - 数据爬取完成，共获取 142 条数据
+2026-01-21 19:25:58 - CryptoFlash - INFO - 开始处理 142 条数据...
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Aster 推出「Hot Picks of the Week」热门币种合约交易大赛，奖池达 5 万美元', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 15:00:41'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '「我踏马来了」市值短时突破 4000 万美元，1 小时涨幅 82.3%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 11:23:13'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'OKX Wallet 推出新版智能账户体系', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 10:12:15'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'BSC 链上 memes 市值突破 1700 万美元', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 06:36:19'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 90000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 05:46:14'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '工信部发布一批新兴产业发展成果，提到区块链等技术加快迭代', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 02:20:42'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 24，市场转变为「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 00:30:00'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 89000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 22:33:58'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 88000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 22:33:56'}
+2026-01-21 19:25:58 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 89000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-20 22:33:30'}
+2026-01-21 19:25:58 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-01-21 19:25:58 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-01-21 19:25:58 - CryptoFlash - INFO - 没有数据需要推送
+2026-01-21 19:25:58 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-21 19:25:58 - CryptoFlash - INFO - CryptoFlash应用运行成功
