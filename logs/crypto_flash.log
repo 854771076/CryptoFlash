@@ -9671,3 +9671,47 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-22 16:33:58 - CryptoFlash - INFO - 没有数据需要推送
 2026-01-22 16:33:58 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-22 16:33:58 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-22 17:27:06 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-22 17:27:06 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-22 17:27:06 - CryptoFlash - INFO - 最大线程数：5
+2026-01-22 17:27:06 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-22 17:27:06 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-22 17:27:06 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-22 17:27:06 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-22 17:27:06 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-22 17:27:06 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-22 17:27:06 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-22 17:27:06 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-22 17:27:06 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-22 17:27:06 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-22 17:27:10 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-22 17:27:10 - CryptoFlash - INFO - 数据爬取完成，共获取 163 条数据
+2026-01-22 17:27:10 - CryptoFlash - INFO - 开始处理 163 条数据...
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bitget 股票行情：美股开盘加密板块普涨，IREN 涨 3%，CIFR 涨 1.5%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 14:31:36'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'RIVER 突破 50 USDT，4 小时涨幅超 12%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 14:24:38'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '特朗普：如果欧洲抛售美国债券等资产，将面临大规模报复。', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 13:16:20'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 已上线 Seeker（SKR）', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 08:08:00'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安公布 FIGHT（FIGHT）空投参与门槛，需达到 231 分 Alpha 积分', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 06:48:03'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'PLUME 日内最高触及 0.016 USDT，24 小时涨幅 7.72%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 05:32:50'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'ELSA 短时触及 0.37 USDT，15 分钟内涨幅 115.56%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 05:32:28'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Zama 代币拍卖已有超 1800 万枚 USDT 加密为 cUSDT，总出价达 2411 次', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 04:15:27'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'SKR 短时触及 0.053 USDT，15 分钟内涨幅 16.39%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 03:20:34'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'SKR 短时触及 0.025 USDT，24 小时涨幅 692.37%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 00:47:10'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 20，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-22 00:30:00'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 90000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 19:34:54'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊升破 3000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 19:32:12'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 89000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 19:27:50'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 88000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 16:56:14'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊跌破 2900 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 16:44:02'}
+2026-01-22 17:27:10 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 89000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-21 16:36:32'}
+2026-01-22 17:27:10 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-01-22 17:27:10 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-01-22 17:27:10 - CryptoFlash - INFO - 没有数据需要推送
+2026-01-22 17:27:10 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-22 17:27:10 - CryptoFlash - INFO - CryptoFlash应用运行成功
