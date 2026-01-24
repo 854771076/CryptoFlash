@@ -11661,3 +11661,42 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-24 19:15:52 - CryptoFlash - INFO - 没有数据需要推送
 2026-01-24 19:15:52 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-24 19:15:52 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-24 20:20:12 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-24 20:20:12 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-24 20:20:12 - CryptoFlash - INFO - 最大线程数：5
+2026-01-24 20:20:12 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-24 20:20:12 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-24 20:20:12 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-24 20:20:12 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-24 20:20:12 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-24 20:20:12 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-24 20:20:12 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-24 20:20:12 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-24 20:20:13 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-24 20:20:13 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-24 20:20:17 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-24 20:20:17 - CryptoFlash - INFO - 数据爬取完成，共获取 122 条数据
+2026-01-24 20:20:17 - CryptoFlash - INFO - 开始处理 122 条数据...
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'PENGUIN 市值短时触及 8700 万美元，暂报 7500 万美元', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-24 12:34:35'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 上线 PENGUIN 和 memes', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-24 10:55:53'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'OKX 星球社区已启动公测，涵盖公私域等四项加密内容生态并设立现金激励池', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-24 08:23:38'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'OKX Wallet 产品负责人 Zakk Wang ：X Layer 已推进至第三阶段，激励基金未来将落地', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-24 06:38:28'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Star 谈 OKX 2026 规划：业务方向聚焦交易所、链上和 OKX Pay 支付服务', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-24 04:18:17'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'OKX Star：年轻群体正成为加密资产的重要参与力量，应坚持技术驱动与长期主义', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-24 03:57:45'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数升至 25，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-24 00:30:00'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '美 SEC 同意撤销对 Gemini Earn 的诉讼，因投资者已收回 100% 资产', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-23 23:05:01'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 90000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-23 19:16:04'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 91000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-23 17:30:10'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊升破 3000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-23 17:29:50'}
+2026-01-24 20:20:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 90000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-23 16:36:06'}
+2026-01-24 20:20:17 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-01-24 20:20:17 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-01-24 20:20:17 - CryptoFlash - INFO - 没有数据需要推送
+2026-01-24 20:20:17 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-24 20:20:17 - CryptoFlash - INFO - CryptoFlash应用运行成功
