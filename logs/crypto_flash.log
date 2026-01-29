@@ -15523,3 +15523,47 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-01-29 10:35:02 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-01-29 10:35:02 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-01-29 10:35:02 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-01-29 11:29:20 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-01-29 11:29:20 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-01-29 11:29:20 - CryptoFlash - INFO - 最大线程数：5
+2026-01-29 11:29:20 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-01-29 11:29:20 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-01-29 11:29:20 - CryptoFlash - INFO - 初始化通知适配器...
+2026-01-29 11:29:20 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-01-29 11:29:20 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-01-29 11:29:20 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-01-29 11:29:20 - CryptoFlash - INFO - 开始爬取数据...
+2026-01-29 11:29:20 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-01-29 11:29:21 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-01-29 11:29:21 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-01-29 11:29:24 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-01-29 11:29:24 - CryptoFlash - INFO - 数据爬取完成，共获取 148 条数据
+2026-01-29 11:29:24 - CryptoFlash - INFO - 开始处理 148 条数据...
+2026-01-29 11:29:24 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'PIGGY 市值短时突破 2000 万美元，近 1 小时涨约 750%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-29 08:50:02'}
+2026-01-29 11:29:24 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安 Alpha 已上线 Piggycell（PIGGY），当前市值约 500 万美元', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-29 08:02:59'}
+2026-01-29 11:29:24 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'SENT 短时突破 0.03 USDT，一小时涨幅超 15%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-29 06:20:54'}
+2026-01-29 11:29:24 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 88000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-29 02:46:12'}
+2026-01-29 11:29:24 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 26，市场处于「恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-29 00:30:00'}
+2026-01-29 11:29:24 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 89000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-28 21:02:12'}
+2026-01-29 11:29:24 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 90000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-01-28 17:50:12'}
+2026-01-29 11:29:24 - CryptoFlash - INFO - 批量插入成功: 3 条记录
+2026-01-29 11:29:24 - CryptoFlash - INFO - 成功将 3 个新标题的md5值保存到数据库
+2026-01-29 11:29:24 - CryptoFlash - INFO - 数据处理完成，处理后剩余 3 条新数据
+2026-01-29 11:29:24 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### binance活动公告
+
+1. [BSquared Network 交易竞赛：交易 BSquared Network (B2) ，分享20万美元等值奖励...
+2026-01-29 11:29:24 - CryptoFlash - INFO - 开始推送 3 条数据...
+2026-01-29 11:29:24 - CryptoFlash - INFO - 开始推送 3 条数据到钉钉（批量）
+2026-01-29 11:29:26 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2026-01-29 11:29:26 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-29 11:29:26 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-01-29 11:29:26 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-01-29 11:29:26 - CryptoFlash - INFO - CryptoFlash应用运行成功
