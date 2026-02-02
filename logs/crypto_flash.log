@@ -19364,3 +19364,43 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-02-02 16:38:03 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-02-02 16:38:03 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-02-02 16:38:03 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-02-02 17:36:32 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-02-02 17:36:32 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-02-02 17:36:32 - CryptoFlash - INFO - 最大线程数：5
+2026-02-02 17:36:32 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-02-02 17:36:32 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-02-02 17:36:32 - CryptoFlash - INFO - 初始化通知适配器...
+2026-02-02 17:36:32 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-02-02 17:36:32 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-02-02 17:36:32 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-02-02 17:36:32 - CryptoFlash - INFO - 开始爬取数据...
+2026-02-02 17:36:32 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-02-02 17:36:33 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-02-02 17:36:33 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-02-02 17:36:36 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-02-02 17:36:36 - CryptoFlash - INFO - 数据爬取完成，共获取 169 条数据
+2026-02-02 17:36:36 - CryptoFlash - INFO - 开始处理 169 条数据...
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 79000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 15:39:02'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bitget 股票行情：美股开盘加密板块普跌，SBET 跌 6.9 %，MSTR 跌 4.8%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 14:35:34'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Hyperliquid 将通过 HIP-4 提案引入原生「结果交易」，构建预测市场基础设施', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 14:26:31'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'ZAMA 代币暂报 0.03 USDT，较拍卖清算价下跌约 40%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 13:12:09'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊升破 2300 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 09:37:22'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 76000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 03:53:04'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 75000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 03:30:54'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊跌破 2200 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 03:21:30'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数仍为 14，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-02 00:30:00'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 77000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-01 23:26:24'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 76000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-01 23:08:38'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 77000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-01 19:56:48'}
+2026-02-02 17:36:36 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 78000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-01 18:02:53'}
+2026-02-02 17:36:36 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-02-02 17:36:36 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-02-02 17:36:36 - CryptoFlash - INFO - 没有数据需要推送
+2026-02-02 17:36:36 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-02-02 17:36:36 - CryptoFlash - INFO - CryptoFlash应用运行成功
