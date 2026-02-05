@@ -21469,3 +21469,52 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-02-05 08:40:19 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-02-05 08:40:19 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-02-05 08:40:19 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-02-05 09:41:51 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-02-05 09:41:52 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-02-05 09:41:52 - CryptoFlash - INFO - 最大线程数：5
+2026-02-05 09:41:52 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-02-05 09:41:52 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-02-05 09:41:52 - CryptoFlash - INFO - 初始化通知适配器...
+2026-02-05 09:41:52 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-02-05 09:41:52 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-02-05 09:41:52 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-02-05 09:41:52 - CryptoFlash - INFO - 开始爬取数据...
+2026-02-05 09:41:52 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-02-05 09:41:52 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-02-05 09:41:52 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-02-05 09:41:55 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-02-05 09:41:55 - CryptoFlash - INFO - 数据爬取完成，共获取 132 条数据
+2026-02-05 09:41:55 - CryptoFlash - INFO - 开始处理 132 条数据...
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '币安将下架 RVVUSDT 和 YALAUSDT 永续合约', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-05 07:15:16'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 71000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-05 04:06:36'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 12，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-05 00:30:00'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 73000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-04 22:22:00'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'SOL 跌破 90 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-04 22:06:20'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 72000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-04 22:06:16'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'BNB 跌破 700 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-04 21:50:46'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 74000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-04 18:40:28'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊跌破 2100 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-04 17:38:48'}
+2026-02-05 09:41:55 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 73000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-04 17:10:24'}
+2026-02-05 09:41:55 - CryptoFlash - INFO - 批量插入成功: 5 条记录
+2026-02-05 09:41:55 - CryptoFlash - INFO - 成功将 5 个新标题的md5值保存到数据库
+2026-02-05 09:41:55 - CryptoFlash - INFO - 数据处理完成，处理后剩余 5 条新数据
+2026-02-05 09:41:55 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### foresightnews
+
+1. [Vitalik：不需要更多复制粘贴的 EVM 链，应关注应用链和机构级 L2](https://farcaster...
+2026-02-05 09:41:55 - CryptoFlash - INFO - 开始推送 5 条数据...
+2026-02-05 09:41:55 - CryptoFlash - INFO - 开始推送 5 条数据到钉钉（批量）
+2026-02-05 09:41:57 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2026-02-05 09:41:57 - CryptoFlash - INFO - 开始推送 2 条数据到Bark（批量）
+2026-02-05 09:41:58 - CryptoFlash - INFO - 所有数据推送Bark成功
+2026-02-05 09:41:58 - CryptoFlash - INFO - 开始推送 2 条数据到Bark（批量）
+2026-02-05 09:41:59 - CryptoFlash - INFO - 所有数据推送Bark成功
+2026-02-05 09:41:59 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-02-05 09:41:59 - CryptoFlash - INFO - CryptoFlash应用运行成功
