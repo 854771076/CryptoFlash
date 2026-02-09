@@ -25354,3 +25354,54 @@ AttributeError: 'NoneType' object has no attribute 'find_all'
 2026-02-09 16:59:21 - CryptoFlash - INFO - 没有数据需要推送
 2026-02-09 16:59:21 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-02-09 16:59:21 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-02-09 17:51:42 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-02-09 17:51:42 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-02-09 17:51:42 - CryptoFlash - INFO - 最大线程数：5
+2026-02-09 17:51:42 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-02-09 17:51:42 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-02-09 17:51:42 - CryptoFlash - INFO - 初始化通知适配器...
+2026-02-09 17:51:42 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-02-09 17:51:42 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-02-09 17:51:42 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-02-09 17:51:42 - CryptoFlash - INFO - 开始爬取数据...
+2026-02-09 17:51:42 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-02-09 17:51:43 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-02-09 17:51:43 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-02-09 17:51:44 - CryptoFlash - ERROR - 爬虫 OkxBoostSpider 爬取失败: 'NoneType' object has no attribute 'find_all'
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 126, in fetch_data
+    result = future.result()
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/concurrent/futures/_base.py", line 444, in result
+    return self.__get_result()
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/spiders/okx_boost.py", line 84, in fetch_data
+    results.extend(self.bnb_chain())
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/spiders/okx_boost.py", line 36, in bnb_chain
+    rows=table.find_all('tr')
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2026-02-09 17:51:45 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-02-09 17:51:45 - CryptoFlash - INFO - 数据爬取完成，共获取 92 条数据
+2026-02-09 17:51:45 - CryptoFlash - INFO - 开始处理 92 条数据...
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bitget 股票行情：美股开盘加密板块涨跌不一，WULF 涨 8.88%，MSTR 跌 6.7%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-09 14:35:55'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'OpenAI 计划于本周发布一款升级版对话模型', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-09 13:10:48'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 69000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-09 10:26:18'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bybit 联合 CEO：迪拜监管沙盒成 Web3 全球化「加速器」，RWA 与合规稳定币成出海新引擎', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-09 06:46:25'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 71000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-09 03:34:37'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数升至 14，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-09 00:30:00'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 70000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-08 23:37:56'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 71000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-08 23:23:14'}
+2026-02-09 17:51:45 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 72000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-08 23:05:56'}
+2026-02-09 17:51:45 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-02-09 17:51:45 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-02-09 17:51:45 - CryptoFlash - INFO - 没有数据需要推送
+2026-02-09 17:51:45 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-02-09 17:51:45 - CryptoFlash - INFO - CryptoFlash应用运行成功
