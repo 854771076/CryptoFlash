@@ -26482,3 +26482,55 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-02-11 06:58:51 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-02-11 06:58:51 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-02-11 06:58:51 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-02-11 07:58:00 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-02-11 07:58:00 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-02-11 07:58:00 - CryptoFlash - INFO - 最大线程数：5
+2026-02-11 07:58:00 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-02-11 07:58:00 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-02-11 07:58:00 - CryptoFlash - INFO - 初始化通知适配器...
+2026-02-11 07:58:00 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-02-11 07:58:00 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-02-11 07:58:00 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-02-11 07:58:00 - CryptoFlash - INFO - 开始爬取数据...
+2026-02-11 07:58:00 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-02-11 07:58:01 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-02-11 07:58:01 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-02-11 07:58:04 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-02-11 07:58:04 - CryptoFlash - INFO - 数据爬取完成，共获取 138 条数据
+2026-02-11 07:58:04 - CryptoFlash - INFO - 开始处理 138 条数据...
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '陈浩濂：香港欢迎 Layer1 在港建立据点，拟研究 DAO 监管框架以解决基金会法律身份问题', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 07:16:49'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Robinhood Crypto 总经理：正从散户交易平台转向加密基础设施，已开启 Robinhood Chain 黑客松', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 06:32:26'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 67000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 06:13:04'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '叶志衡：香港证监会就「监管沟通加速器」计划招标，将引入第三方服务商作为沟通桥梁', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 05:39:03'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'A 股数字货币概念午后异动，御银股份一度涨停', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 05:34:55'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Tom Lee：MrBeast 将成为 Z 世代和 Alpha 世代的「金融机构」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 05:30:41'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Tom Lee：以太坊若再次触及 1890 美元，将形成完美底部', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 05:23:19'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '梁凤仪宣布三项新举措：香港拟允许持牌平台提供永续合约产品和虚拟资产保证金融资服务，并放宽关联做市商规定', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 04:38:48'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 68000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 04:17:10'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '陈茂波：香港拟于今夏引入虚拟资产交易商制度相关立法，3 月发放首批稳定币牌照', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 04:14:06'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'ICE 总裁：推出七种基于 CoinDesk 指数的加密货币现金结算期货合约', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 03:51:39'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'ZRO 短时突破 2.4 USDT，24 小时涨幅 23.25%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 02:51:35'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Lily Liu：将 Web2 超级应用与公链结合是释放所有权经济潜力的关键', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 02:25:41'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '李家超：香港正致力于建设成为全球数字资产创新中心，首批稳定币发行人牌照将于下月发放', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 01:51:12'}
+2026-02-11 07:58:04 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数升至 11，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 00:30:00'}
+2026-02-11 07:58:04 - CryptoFlash - INFO - 批量插入成功: 2 条记录
+2026-02-11 07:58:04 - CryptoFlash - INFO - 成功将 2 个新标题的md5值保存到数据库
+2026-02-11 07:58:04 - CryptoFlash - INFO - 数据处理完成，处理后剩余 2 条新数据
+2026-02-11 07:58:04 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### binance最新动态公告
+
+1. [币安理财竞技场：最高可享29%年化收益率，每周新限时活动不容错过（2026-02-11）](https://www...
+2026-02-11 07:58:04 - CryptoFlash - INFO - 开始推送 2 条数据...
+2026-02-11 07:58:04 - CryptoFlash - INFO - 开始推送 2 条数据到钉钉（批量）
+2026-02-11 07:58:05 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2026-02-11 07:58:05 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-02-11 07:58:05 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-02-11 07:58:05 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-02-11 07:58:05 - CryptoFlash - INFO - CryptoFlash应用运行成功
