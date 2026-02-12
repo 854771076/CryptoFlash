@@ -27950,3 +27950,49 @@ AssertionError: 邮件通知器未配置SMTP服务器
 2026-02-12 15:51:15 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-02-12 15:51:15 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-02-12 15:51:15 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-02-12 16:56:38 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-02-12 16:56:38 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-02-12 16:56:38 - CryptoFlash - INFO - 最大线程数：5
+2026-02-12 16:56:38 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-02-12 16:56:38 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-02-12 16:56:38 - CryptoFlash - INFO - 初始化通知适配器...
+2026-02-12 16:56:38 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-02-12 16:56:38 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-02-12 16:56:38 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-02-12 16:56:38 - CryptoFlash - INFO - 开始爬取数据...
+2026-02-12 16:56:38 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-02-12 16:56:39 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-02-12 16:56:39 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-02-12 16:56:42 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-02-12 16:56:42 - CryptoFlash - INFO - 数据爬取完成，共获取 161 条数据
+2026-02-12 16:56:42 - CryptoFlash - INFO - 开始处理 161 条数据...
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bitget 已向集齐九福用户发放 8888 USDT 新春红包', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 11:45:05'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'MOVE 短时触及 0.039 USDT，24 小时涨幅 65.54%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 08:54:02'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'ME 短时触及 0.25 USDT，24 小时涨幅 47.27%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 08:50:43'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Richard Teng：已累计投入 6 亿美元用于「10 ·11」事件中用户补偿及商誉赔付', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 08:42:23'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'YZi Labs 负责人：与赵长鹏共同管理超 100 亿美元资金，重点布局 AI、生物技术及 Web3', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 07:14:57'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'WLFI COO：将于下周公布 RWA 重大进展，计划推出零费用外汇结算应用', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 06:14:21'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'BERA 日内最高触及 1.53 USDT，24 小时涨幅 79.78%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 05:21:47'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '巴基斯坦 PVARA 主席：今年将推进牌照制度、稳定币、国债代币化及 AI 驱动的监管体系', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 04:14:11'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'SharpLink CEO：以太坊的宏观利好正处于其十年半历史以来的最佳时刻', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 04:08:47'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Bybit CEO：香港新规将提升市场流动性，未来五年或实现「无感」区块链全球投资', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 03:52:37'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊基金会董事：L2 应走向差异化，以太坊原生账户抽象与 ZK-EVM 将彻底优化用户体验', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 03:50:36'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '以太坊基金会董事：没有任何 L1 能够在技术和货币价值上与以太坊抗衡', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 03:19:29'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '圆桌讨论：东南亚地区加密用户量超千万，正由零售投机转向商业支付与机构采用', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 03:08:37'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': 'Cardano 创始人：LayerZero 与 USDCx 将上线 Cardano，Midnight 联邦主网将于 3 月底启动', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 02:31:33'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数降至 5，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-12 00:30:00'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 67000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 23:21:08'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 68000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 21:25:10'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币跌破 66000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 16:49:18'}
+2026-02-12 16:56:42 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '比特币升破 67000 USDT', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-11 16:11:20'}
+2026-02-12 16:56:42 - CryptoFlash - INFO - 数据处理完成，处理后剩余 0 条新数据
+2026-02-12 16:56:42 - CryptoFlash - INFO - 没有数据需要生成通知内容
+2026-02-12 16:56:42 - CryptoFlash - INFO - 没有数据需要推送
+2026-02-12 16:56:42 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-02-12 16:56:42 - CryptoFlash - INFO - CryptoFlash应用运行成功
