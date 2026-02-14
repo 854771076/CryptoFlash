@@ -29193,3 +29193,42 @@ AttributeError: 'NoneType' object has no attribute 'find_all'
 2026-02-14 01:54:31 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
 2026-02-14 01:54:31 - CryptoFlash - INFO - CryptoFlash服务执行完成
 2026-02-14 01:54:31 - CryptoFlash - INFO - CryptoFlash应用运行成功
+2026-02-14 04:09:14 - CryptoFlash - INFO - 数据库初始化成功: data/article_hashes.db
+2026-02-14 04:09:14 - CryptoFlash - INFO - 启动CryptoFlash应用...
+2026-02-14 04:09:14 - CryptoFlash - INFO - 最大线程数：5
+2026-02-14 04:09:14 - CryptoFlash - INFO - 初始化爬虫适配器...
+2026-02-14 04:09:14 - CryptoFlash - INFO - 成功初始化 4 个爬虫适配器
+2026-02-14 04:09:14 - CryptoFlash - INFO - 初始化通知适配器...
+2026-02-14 04:09:14 - CryptoFlash - ERROR - 初始化通知适配器 email 失败: 邮件通知器未配置SMTP服务器
+Traceback (most recent call last):
+  File "/home/runner/work/CryptoFlash/CryptoFlash/core/service.py", line 105, in init_notifiers
+    self.notifiers.append(notifier_cls(notifier_conf))
+  File "/home/runner/work/CryptoFlash/CryptoFlash/adapters/notifiers/email_notifier.py", line 25, in __init__
+    assert self.smtp_server, "邮件通知器未配置SMTP服务器"
+AssertionError: 邮件通知器未配置SMTP服务器
+2026-02-14 04:09:14 - CryptoFlash - INFO - 成功初始化 3 个通知适配器
+2026-02-14 04:09:14 - CryptoFlash - INFO - 开始执行CryptoFlash服务...
+2026-02-14 04:09:14 - CryptoFlash - INFO - 开始爬取数据...
+2026-02-14 04:09:14 - CryptoFlash - INFO - 开始爬取币安公告: https://www.binance.com/zh-CN/support/announcement
+2026-02-14 04:09:14 - CryptoFlash - INFO - 成功爬取 40 条币安公告
+2026-02-14 04:09:14 - CryptoFlash - INFO - 开始爬取ForesightNews: https://foresightnews.pro/news
+2026-02-14 04:09:17 - CryptoFlash - INFO - 成功从 https://nitter.0xfiang.com 爬取 5 条推文
+2026-02-14 04:09:17 - CryptoFlash - INFO - 数据爬取完成，共获取 112 条数据
+2026-02-14 04:09:17 - CryptoFlash - INFO - 开始处理 112 条数据...
+2026-02-14 04:09:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '受与 Apollo 合作消息影响，MORPHO 短时涨约 10%', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-14 01:40:12'}
+2026-02-14 04:09:17 - CryptoFlash - WARNING - 数据项缺少标题字段: {'id': '', 'title': '今日恐慌贪婪指数仍为 9，市场处于「极度恐慌状态」', 'url': '', 'source': 'foresightnews', 'pub_time': '2026-02-14 00:30:00'}
+2026-02-14 04:09:17 - CryptoFlash - INFO - 批量插入成功: 6 条记录
+2026-02-14 04:09:17 - CryptoFlash - INFO - 成功将 6 个新标题的md5值保存到数据库
+2026-02-14 04:09:17 - CryptoFlash - INFO - 数据处理完成，处理后剩余 6 条新数据
+2026-02-14 04:09:17 - CryptoFlash - INFO - 成功生成通知内容: # CryptoFlash 最新资讯
+
+### foresightnews
+
+1. [samurai.eth 三周内已出售 2503 枚 PAXG，价值约 1289 万美元](https://x.co...
+2026-02-14 04:09:17 - CryptoFlash - INFO - 开始推送 6 条数据...
+2026-02-14 04:09:17 - CryptoFlash - INFO - 开始推送 6 条数据到钉钉（批量）
+2026-02-14 04:09:18 - CryptoFlash - INFO - 所有数据推送钉钉成功
+2026-02-14 04:09:18 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-02-14 04:09:18 - CryptoFlash - INFO - 通知器 BarkNotifier 没有匹配的数据需要推送
+2026-02-14 04:09:18 - CryptoFlash - INFO - CryptoFlash服务执行完成
+2026-02-14 04:09:18 - CryptoFlash - INFO - CryptoFlash应用运行成功
